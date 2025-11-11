@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Head from "next/head";
-import posts from "@/data/blogPosts.json";
+import Link from "next/link";
+import posts from "../../data/blogPosts.json";
 
 export default function BlogPage() {
   return (
@@ -9,7 +9,7 @@ export default function BlogPage() {
         <title>Blog | Haberist</title>
         <meta
           name="description"
-          content="Haberist Blog — Güncel teknoloji, ekonomi, medya ve yaşam üzerine analizler."
+          content="Haberist Blog – Güncel teknoloji, ekonomi, medya ve yaşam üzerine analizler."
         />
       </Head>
 
@@ -20,16 +20,12 @@ export default function BlogPage() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="block border border-zinc-200 rounded-xl shadow-sm hover:shadow-md transition p-5 bg-white"
-            >
-              <h2 className="text-lg font-bold mb-2 text-zinc-800">
-                {post.title}
-              </h2>
-              <p className="text-sm text-zinc-500 mb-2">{post.date}</p>
-              <p className="text-zinc-600 text-sm">{post.excerpt}</p>
+            <Link key={post.slug} href={`/blog/${post.slug}`}>
+              <div className="block border border-zinc-200 rounded-xl shadow-sm hover:shadow-md transition p-5 bg-white">
+                <h2 className="text-lg font-bold mb-2">{post.title}</h2>
+                <p className="text-sm text-zinc-500 mb-2">{post.date}</p>
+                <p className="text-zinc-700">{post.excerpt}</p>
+              </div>
             </Link>
           ))}
         </div>
