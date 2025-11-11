@@ -16,16 +16,27 @@ export default function Nav() {
     <>
       {/* 🔝 Üst Menü */}
       <header className="sticky top-0 z-50 bg-white border-b border-zinc-200 shadow-sm">
-        <div className="container flex flex-col sm:flex-row sm:items-center sm:justify-between py-3">
-          {/* 🔴 Logo + Mottolar */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-            <h1 className="text-xl font-bold text-[var(--haberist-red)] tracking-tight">
-              Haberist
-            </h1>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 text-xs sm:text-sm text-zinc-600">
-              <span>Türkiye’nin tüm haberleri, tek platformda.</span>
-              <span className="hidden sm:inline text-zinc-400">•</span>
-              <span>Gündemi senin için takip ediyoruz.</span>
+        <div className="container flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 gap-2">
+          {/* 🔴 Logo + Motto */}
+          <div className="flex items-center gap-3">
+            {/* Küçük dairesel logo */}
+            <div className="w-8 h-8 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
+              H
+            </div>
+
+            <div>
+              <h1 className="text-xl font-extrabold text-[var(--haberist-red)] tracking-tight leading-none">
+                Haberist
+              </h1>
+              <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-tight">
+                <span className="block sm:inline">
+                  Türkiye’nin tüm haberleri, tek platformda.
+                </span>{" "}
+                <span className="hidden sm:inline text-zinc-400">•</span>{" "}
+                <span className="block sm:inline">
+                  Gündemi senin için takip ediyoruz.
+                </span>
+              </p>
             </div>
           </div>
         </div>
@@ -40,7 +51,7 @@ export default function Nav() {
                 href={cat.path}
                 className={`whitespace-nowrap px-4 py-1.5 text-sm font-medium rounded-full transition-all ${
                   active
-                    ? "bg-[var(--haberist-red)] text-white shadow-sm"
+                    ? "bg-[var(--haberist-red)] text-white shadow-md"
                     : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"
                 }`}
               >
