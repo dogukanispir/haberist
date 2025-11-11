@@ -1,35 +1,43 @@
-import React from 'react';
-import Link from 'next/link';
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-const tabs = [
-  { key: 'gundem', label: 'Gündem' },
-  { key: 'ekonomi', label: 'Ekonomi' },
-  { key: 'spor', label: 'Spor' },
-  { key: 'teknoloji', label: 'Teknoloji' },
-  { key: 'magazin', label: 'Magazin' },
-];
+export default function Nav() {
+  const router = useRouter()
+  const categories = [
+    { name: "Gündem", path: "/c/gundem" },
+    { name: "Ekonomi", path: "/c/ekonomi" },
+    { name: "Spor", path: "/c/spor" },
+    { name: "Teknoloji", path: "/c/teknoloji" },
+    { name: "Magazin", path: "/c/magazin" },
+  ]
 
-export default function Nav({ active }) {
   return (
-    <div className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b">
-      <div className="container py-3 flex items-center gap-3">
-        <Link href="/" className="font-bold text-xl">
+    <header className="sticky top-0 z-50 bg-white border-b border-zinc-200 shadow-sm">
+      <div className="container flex items-center justify-between py-2">
+        <h1 className="text-lg font-bold text-[var(--haberist-red)]">
           Haberist
-        </Link>
-        <div className="flex gap-2 ml-auto">
-          {tabs.map((t) => (
+        </h1>
+      </div>
+
+      {/* 🔹 Kategori Butonları */}
+      <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100">
+        {categories.map((cat) => {
+          const active = router.asPath === cat.path
+          return (
             <Link
-              key={t.key}
-              href={t.key === 'gundem' ? '/' : `/c/${t.key}`}
-              className={`px-3 py-1.5 rounded-full text-sm ${
-                active === t.key ? 'bg-zinc-900 text-white' : 'bg-zinc-100'
+              key={cat.path}
+              href={cat.path}
+              className={`whitespace-nowrap px-4 py-1.5 text-sm font-medium rounded-full transition-all ${
+                active
+                  ? "bg-[var(--haberist-red)] text-white shadow-sm"
+                  : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"
               }`}
             >
-              {t.label}
+              {cat.name}
             </Link>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+          )
+        })}
+      </nav>
+    </header>
+  )
 }
