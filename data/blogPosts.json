@@ -1,80 +1,42 @@
 [
   {
-    "slug": "2025te-turkiye-ekonomisini-bekleyen-5-buyuk-degisim",
-    "title": "2025'te Türkiye Ekonomisini Bekleyen 5 Büyük Değişim",
-    "date": "2025-11-11",
-    "excerpt": "Türkiye ekonomisi 2025 yılında yeni bir dönüşüm dönemine giriyor. Faiz, döviz, enerji ve üretim odaklı büyümenin yeni dinamiklerini analiz ediyoruz.",
-    "content": "2025 yılı, Türkiye ekonomisi açısından bir kırılma noktası olarak değerlendiriliyor. Küresel enflasyonun azaldığı, dijitalleşmenin hızlandığı ve enerji fiyatlarının yeniden dengelendiği bu dönemde Türkiye, ekonomik stratejilerini yeniden şekillendiriyor.\n\n### 1. Enflasyonda Gerçek Denge Arayışı\nUzmanlara göre Merkez Bankası’nın politikaları, artık yalnızca fiyat istikrarına değil, aynı zamanda sürdürülebilir büyümeye odaklanıyor. 2025'in ilk çeyreğinde baz etkisinin azalmasıyla birlikte yıllık enflasyonun %30 seviyelerine gerilemesi bekleniyor.\n\n### 2. Döviz Kuru ve Yeni İhracat Hamlesi\nTL’nin kademeli değer kazanımı, ihracatçıları daha verimli üretim sistemlerine yöneltiyor. İhracat stratejileri, sadece Avrupa değil, Orta Doğu ve Asya pazarlarına da odaklanacak şekilde güncelleniyor.\n\n### 3. Enerji Dönüşümü\nYenilenebilir enerjiye geçiş süreci, Türkiye’nin dış ticaret açığını azaltmada kilit rol oynayacak. 2025 sonuna kadar güneş ve rüzgar enerjisinin toplam üretimdeki payının %20’ye yaklaşması bekleniyor.\n\n### 4. Dijital Ekonomi\nE-ticaret, fintech ve yapay zekâ destekli çözümler, ekonomik büyümenin motoru haline geliyor. Türkiye, dijital vergi yasalarıyla birlikte kayıt dışı ekonomiyi azaltmayı hedefliyor.\n\n### 5. Sosyal Refah Reformu\nHükümetin planladığı yeni sosyal paketlerle birlikte gelir dağılımı adaletsizliği azaltılmaya çalışılıyor. Bu reformlar, hem orta sınıfın güçlenmesine hem de yerel üretimin desteklenmesine odaklanacak."
+    "title": "Türk futbolunda bahis soruşturması genişliyor: Yeni detaylar ortaya çıktı",
+    "slug": "turk-futbolunda-bahis-sorusturmasi-genisliyor",
+    "date": "2025-11-11T10:00:00+03:00",
+    "excerpt": "Türk futbolunda bahis skandalı büyüyor. Yeni isimler, gizli mesajlar ve federasyon soruşturması dikkat çekiyor.",
+    "image": "https://haberist.net/uploads/bahis-sorusturmasi.jpg",
+    "content": "<p>Türkiye Futbol Federasyonu’nun son açıklamalarıyla birlikte bahis iddiaları yeniden gündeme geldi. Soruşturmanın genişletileceği ve bazı kulüplerin inceleme altına alındığı öğrenildi.</p><p>Uzmanlar, futbolun güvenilirliğinin korunması için kapsamlı bir temizlik sürecine girileceğini belirtiyor. Federasyon yetkilileri ise konuyla ilgili detaylı bir raporun hazırlanmakta olduğunu açıkladı.</p>"
   },
   {
-    "slug": "yapay-zeka-caginda-gazeteciligin-evrimi",
-    "title": "Yapay Zeka Çağında Gazeteciliğin Evrimi",
-    "date": "2025-11-10",
-    "excerpt": "Yapay zekâ yalnızca veri toplamakla kalmıyor, haberi analiz ediyor, özetliyor ve hatta yazıyor. Peki bu yeni çağda gazetecilik nereye evriliyor?",
-    "content": "Yapay zekâ (AI), haber üretim süreçlerini kökten değiştirdi. Eskiden saatler süren araştırma ve doğrulama işlemleri artık birkaç saniye içinde tamamlanabiliyor.\n\n### AI Editörler Geliyor\nBirçok haber kuruluşu artık AI destekli editörler kullanıyor. Bu sistemler, haberlerin tarafsızlığını ve doğruluğunu ölçerek, hatalı bilgilerin yayılmasını önlüyor.\n\n### İnsan ve Makine İşbirliği\nGazeteciler, artık haberin duygusal yönünü koruma görevini üstleniyor. Yapay zekâ veriyi analiz ederken, insan gazeteci hikâyeyi anlatıyor. Bu da 'hibrit gazetecilik' denilen yeni bir modelin doğmasına yol açtı.\n\n### Geleceğin Haber Merkezleri\n2025’in sonunda, tamamen otomatik çalışan ilk haber merkezlerinin testleri başlayacak. Bu sistemler, haber yazmakla kalmayıp, görselleri ve sosyal medya paylaşımlarını da optimize edecek."
+    "title": "Merkez Bankası faiz kararını açıkladı: Piyasalar nasıl tepki verdi?",
+    "slug": "merkez-bankasi-faiz-karari-aciklandi",
+    "date": "2025-11-10T14:30:00+03:00",
+    "excerpt": "Merkez Bankası faiz oranını sabit tutma kararı aldı. Ekonomistler piyasaların bu karara nasıl tepki verdiğini yorumluyor.",
+    "image": "https://haberist.net/uploads/faiz-karari.jpg",
+    "content": "<p>Türkiye Cumhuriyet Merkez Bankası (TCMB) kasım ayı toplantısında faiz oranını yüzde 35 seviyesinde sabit tuttu. Karar sonrasında döviz kurları ve borsa kısa süreli dalgalanma yaşadı.</p><p>Uzmanlara göre, bankanın bu kararı yıl sonuna kadar enflasyonun seyriyle paralel olarak gözden geçirilecek.</p>"
   },
   {
-    "slug": "dogru-haber-nasil-anlasilir",
-    "title": "Dijital Çağda Doğru Haber Nasıl Anlaşılır?",
-    "date": "2025-11-09",
-    "excerpt": "Sahte haberler dijital çağın en büyük sorunu. Peki doğru haber ile manipülasyonu nasıl ayırt ederiz?",
-    "content": "Günümüzde bilgiye erişim kolay, ancak doğruluk oranı azaldı. Sosyal medyada her dakika milyonlarca içerik paylaşılıyor. Bu durum, yanlış bilginin yayılmasını da hızlandırıyor.\n\n### Kaynağı Kontrol Et\nBir haberin güvenilir olup olmadığını anlamanın ilk adımı, kaynağı doğrulamaktır. Tanınmış medya kuruluşları veya resmi kurum açıklamaları dışında, haberlere temkinli yaklaşmak gerekir.\n\n### Görsel Manipülasyonlar\nAI destekli görsel manipülasyon teknikleri, artık haberlere sahte görüntüler eklenmesine olanak tanıyor. Bu nedenle tersine görsel arama yapmak, haberi doğrulamada kritik hale geldi.\n\n### Bilgi Ekosisteminde Okur Bilinci\nOkuyucunun da artık pasif tüketici değil, aktif sorgulayıcı olması gerekiyor. Dijital okuryazarlık, 2025’in en önemli toplumsal becerilerinden biri haline geldi."
+    "title": "Yeni yapay zekâ modeli GPT-5 tanıtıldı: İşte dikkat çeken yenilikler",
+    "slug": "gpt-5-tanitildi",
+    "date": "2025-11-09T09:00:00+03:00",
+    "excerpt": "OpenAI, yeni nesil GPT-5 modelini tanıttı. Model, çoklu görevlerde yüzde 40 daha yüksek doğruluk oranı sunuyor.",
+    "image": "https://haberist.net/uploads/gpt5-tanitim.jpg",
+    "content": "<p>OpenAI tarafından geliştirilen GPT-5 modeli, doğal dil işleme ve yapay zekâ alanında yeni bir dönemin kapısını aralıyor. Yeni sürüm, hem metin hem görsel tabanlı görevleri çok daha etkili bir şekilde yerine getiriyor.</p><p>Uzmanlar, GPT-5’in eğitim süreçlerinde etik veri kullanımına daha fazla önem verildiğini belirtiyor.</p>"
   },
   {
-    "slug": "turk-futbolunda-yeni-nesil-oyuncular",
-    "title": "Türk Futbolunda Altyapıdan Zirveye: Yeni Nesil Oyuncular",
-    "date": "2025-11-08",
-    "excerpt": "Türkiye futbolunda 2000 sonrası doğumlu jenerasyonun yükselişi sürüyor. Yeni dönemin yıldız adaylarını inceliyoruz.",
-    "content": "Türk futbolu, uzun yıllar boyunca altyapı yatırımlarında geri kalmış olsa da, son beş yılda büyük bir değişim yaşanıyor.\n\n### Avrupa Modeli Altyapılar\nFenerbahçe, Galatasaray, Trabzonspor ve Başakşehir gibi kulüpler, Avrupa modeli akademiler kurarak oyuncu yetiştirme sistemini yeniden yapılandırdı.\n\n### Analitik Futbol\nVeri analitiği artık sadece istatistik değil, bir karar mekanizması. Oyuncuların fiziksel yükleri, antrenman performansları ve psikolojik durumları yapay zekâ sistemleriyle ölçülüyor.\n\n### Yeni Yıldızlar\nArda Güler, Semih Kılıçsoy, Kenan Yıldız gibi isimler, bu dönüşümün en somut örnekleri. Türk futbolu, artık Avrupa sahnesinde kendi yetiştirdiği oyuncularla rekabet ediyor."
+    "title": "Fenerbahçe'den flaş transfer hamlesi: Avrupa'dan yıldız isim yolda",
+    "slug": "fenerbahce-transfer-hamlesi-avrupa-yildiz",
+    "date": "2025-11-08T18:45:00+03:00",
+    "excerpt": "Fenerbahçe yönetimi, ocak ayında kadroyu güçlendirmek için Avrupa’dan önemli bir yıldızla görüşüyor.",
+    "image": "https://haberist.net/uploads/fenerbahce-transfer.jpg",
+    "content": "<p>Fenerbahçe, devre arası transfer döneminde forvet hattına takviye yapmak için Avrupa’dan tanınmış bir futbolcuyla görüşmelere başladı. Kaynaklara göre transfer görüşmeleri olumlu ilerliyor.</p><p>Yönetim, takımın Avrupa kupalarındaki hedeflerine ulaşması için güçlü bir kadro oluşturmayı amaçlıyor.</p>"
   },
   {
-    "slug": "sosyal-medya-unluleri-gercek-mi-imaj-mi",
-    "title": "Sosyal Medya Ünlüleri: Gerçek mi, İmaj mı?",
-    "date": "2025-11-07",
-    "excerpt": "Sosyal medya fenomenleri, dijital çağın yeni yıldızları. Ancak bu popülerliğin arkasında nasıl bir gerçeklik yatıyor?",
-    "content": "Sosyal medya, artık bireylerin hayatını şekillendiren bir alan haline geldi. Fenomen kültürü, gençler arasında yeni bir meslek türü doğurdu.\n\n### Görünenin Arkasındaki Gerçek\nInstagram ve TikTok’ta mükemmel hayatlar sunan birçok fenomen, aslında ciddi bir psikolojik baskı altında yaşıyor. Bu durum, 'dijital yorgunluk' sendromunu doğuruyor.\n\n### Dijital Pazarlama Gerçeği\nFenomen ekonomisi 2025 itibariyle milyar dolarlık bir endüstri haline geldi. Markalar, artık geleneksel reklam yerine, mikro fenomenlerle daha etkili kampanyalar yürütüyor.\n\n### Toplumsal Etki\nSosyal medya artık sadece eğlence değil, toplumsal yönlendirme gücüne de sahip. Fenomenlerin söylemleri, siyasi ve kültürel alanlarda bile yankı buluyor."
-  },
-  {
-    "slug": "kripto-paralarin-yasal-durumu-turkiye",
-    "title": "Kripto Paraların Yasal Statüsü: Türkiye Ne Yapacak?",
-    "date": "2025-11-06",
-    "excerpt": "Kripto para piyasası büyüyor ama düzenleme eksikliği sürüyor. Türkiye, bu alanda nasıl bir yol izleyecek?",
-    "content": "Kripto varlıklar 2025 itibariyle dünya finans sisteminde resmi kabul görmeye başladı. Avrupa Birliği, MiCA yasasını yürürlüğe koydu. Türkiye ise kendi kripto yasasını hazırlıyor.\n\n### Vergilendirme Düzeni\nYeni yasa tasarısında, kripto kazançlarının %10’a kadar vergilendirilmesi planlanıyor. Bu, devletin denetim mekanizmasını güçlendirecek.\n\n### Güvenli Altyapı\nTürkiye, yerli kripto borsalarına lisans verme sürecini hızlandırıyor. Amaç, kullanıcı güvenliğini artırmak ve kara para aklama riskini önlemek.\n\n### Finansal Entegrasyon\nKripto paralar artık bankacılık sistemine entegre olacak. Kullanıcılar, dijital varlıklarını resmi cüzdanlarla yönetebilecek."
-  },
-  {
-    "slug": "dijital-medya-etigi",
-    "title": "Dijital Medya Etiği: Bilgi mi, Tıklama mı?",
-    "date": "2025-11-05",
-    "excerpt": "Dijital habercilik hız kazandı ama etik değerler geride mi kaldı? Tıklama odaklı habercilikle etik gazeteciliği tartışıyoruz.",
-    "content": "Dijital medya, haber üretim hızını artırırken kaliteyi de tartışmaya açtı. 'Clickbait' (tıklama tuzağı) başlıklar, kısa vadeli kazanç sağlarken uzun vadede güven kaybı yaratıyor.\n\n### Haberciliğin Yeni Sınavı\nOkuyucular artık sadece 'ne oldu' değil, 'neden oldu' sorusunun cevabını da istiyor. Bu da derinlikli içeriklerin önemini artırıyor.\n\n### AI ve Otomasyonun Etkisi\nOtomatik haber sistemleri etik riskleri de beraberinde getiriyor. Gerçeklik filtresi eksik olan yapay zekâlar, bazen yanlış bilgi yayabiliyor.\n\n### Çözüm\nEtik kodların dijital çağda yeniden tanımlanması şart. Medya okuryazarlığı eğitimi, hem gazeteciler hem okuyucular için zorunlu hale gelmeli."
-  },
-  {
-    "slug": "elektrikli-araclar-ve-turkiye-enerji-dengesi",
-    "title": "Elektrikli Araçlar Türkiye Enerji Dengesini Nasıl Etkiler?",
-    "date": "2025-11-04",
-    "excerpt": "Elektrikli araçlar yalnızca çevre dostu değil, enerji bağımsızlığının da anahtarı olabilir.",
-    "content": "Elektrikli araç (EV) devrimi, dünya genelinde olduğu gibi Türkiye’de de hızla yayılıyor. Ancak bu dönüşümün enerji sistemine etkileri tartışılıyor.\n\n### Şarj Altyapısı\n2025 itibariyle Türkiye’de 20.000’den fazla halka açık şarj istasyonu bulunuyor. Bu sayı 2030’a kadar 100.000’in üzerine çıkacak.\n\n### Enerji Talebi ve Üretim Dengesi\nElektrikli araçlar, enerji talebini artırırken yenilenebilir kaynak kullanımını da teşvik ediyor. Güneş panelleri ve akıllı şebekelerle entegrasyon, enerji verimliliğini artıracak.\n\n### Ekonomik Etki\nEV endüstrisi, yerli batarya üretimi sayesinde dışa bağımlılığı azaltıyor. Türkiye bu alanda bölgesel bir merkez olma yolunda."
-  },
-  {
-    "slug": "turk-kulturu-dijital-dunyada-nasil-evriliyor",
-    "title": "Dijital Dünyada Türk Kültürü Nasıl Evriliyor?",
-    "date": "2025-11-03",
-    "excerpt": "Dijitalleşme kültürümüzü dönüştürüyor mu, yoksa güçlendiriyor mu? Türk kültürünün dijital dünyadaki yolculuğuna bakıyoruz.",
-    "content": "Türk kültürü, dijitalleşme çağında hem tehdit hem fırsatlarla karşı karşıya. YouTube, TikTok ve Netflix gibi platformlar, kültürel temsillerin biçimini değiştiriyor.\n\n### Kültürel Üretim ve Yayılım\nBağımsız içerik üreticileri, geleneksel medyanın sınırlarını aşarak kültürü daha geniş kitlelere ulaştırıyor.\n\n### Tehlike: Homojenleşme\nKüresel içerik bombardımanı, yerel değerlerin silikleşmesine yol açabiliyor. Ancak dijital araçlar doğru kullanıldığında, kültürel çeşitliliği de koruyabiliyor.\n\n### Sonuç\nKültürel mirasın dijitalleşmesi, Türkiye’nin geleceği açısından stratejik bir öneme sahip. Yeni nesil artık hem global hem yerel kimliğiyle var oluyor."
-  },
-  {
-    "slug": "ai-destekli-egitim-sistemleri",
-    "title": "Yeni Nesil Öğrenme: AI Destekli Eğitim Sistemleri",
-    "date": "2025-11-02",
-    "excerpt": "Eğitimde yapay zekâ kullanımı, kişisel öğrenme çağını başlatıyor. Öğrenciler artık kendi hızlarında, kendi yöntemleriyle öğreniyor.",
-    "content": "Eğitim dünyası, yapay zekânın etkisiyle yeniden şekilleniyor. Geleneksel sınıf anlayışı yerini kişiselleştirilmiş dijital öğrenmeye bırakıyor.\n\n### Kişisel Öğrenme Deneyimi\nAI tabanlı sistemler, her öğrencinin güçlü ve zayıf yönlerini analiz ederek, ona özel bir öğrenme rotası çiziyor.\n\n### Öğretmenlerin Yeni Rolü\nArtık öğretmen, bilgi aktarıcısı değil, rehber konumunda. Bu durum, eğitimde insan dokunuşunun önemini azaltmak yerine derinleştiriyor.\n\n### Geleceğe Bakış\n2025 sonrası dönemde, yapay zekâ destekli eğitimin dünya genelinde standart hale gelmesi bekleniyor. Türkiye de bu dönüşümde aktif rol oynuyor."
-  },
-{
-  "slug": "turk-futbolunda-bahis-sorusturmalari-ve-yeni-donem",
-  "title": "Türk Futbolunda Bahis Soruşturmaları ve Yeni Dönem: Temiz Sayfa Mümkün mü?",
-  "date": "2025-11-11",
-  "excerpt": "Türk futbolunda son haftalarda ortaya çıkan bahis soruşturmaları, yalnızca birkaç oyuncuyu değil, tüm sistemi sarsıyor. Peki bu olaylar, sporda güveni yeniden tesis edebilir mi?",
-  "content": "Türk futbolu, 2025 yılına yaklaşırken tarihinin en büyük etik sınavlarından birini yaşıyor. Son haftalarda kamuoyuna yansıyan bahis iddiaları, yalnızca birkaç futbolcunun değil, kulüp yöneticilerinden teknik ekiplere kadar uzanan geniş bir ağı gündeme getirdi.\n\n### Gözaltılar ve İlk Bulgular\nEmniyet birimleri tarafından başlatılan operasyonlarda, alt liglerde görev yapan bazı futbolcuların yasa dışı bahis şirketleriyle bağlantılı olduğu iddia edildi. Savcılık soruşturmaları, bazı maçlarda sonuç manipülasyonu olabileceği yönünde güçlü delillere ulaştı.\n\n### Taraftar Güveni Sarsıldı\nFutbol, Türkiye’de yalnızca bir spor değil, milyonlarca insanın duygusal yatırım yaptığı bir alan. Bu tür iddialar, taraftar güvenini doğrudan etkiliyor. Sosyal medyada #TemizFutbol etiketiyle başlatılan kampanyalar, futbolseverlerin oyunun temizlenmesi için seslerini yükselttiğini gösteriyor.\n\n### Kulüplerden Açıklamalar\nBirçok Süper Lig kulübü, kendi oyuncularıyla ilgili incelemeler başlattı. Türkiye Futbol Federasyonu (TFF) ise konuyla ilgili 'sıfır tolerans' politikası yürüteceğini açıkladı. Yeni düzenlemelerle birlikte, futbolcuların ve teknik personelin finansal hareketleri artık dijital olarak izlenebilir hale getirilecek.\n\n### Avrupa Örnekleri\nİtalya ve İspanya gibi ülkeler de geçmişte benzer bahis skandalları yaşamış, ancak şeffaf disiplin süreçleriyle sistemi yeniden inşa etmişti. Türkiye’nin de bu süreçte benzer bir yol izlemesi, yalnızca sporun değil, ülkenin uluslararası imajı açısından da kritik.\n\n### Sosyal Medyanın Rolü\nSoruşturmaların derinleşmesinde, taraftarların sosyal medya paylaşımları ve video analizlerinin önemli rol oynadığı konuşuluyor. Artık her maç, binlerce gözle inceleniyor. Bu durum, futbolun dijital çağda şeffaflaşmasının da bir göstergesi.\n\n### Temiz Sayfa Mümkün mü?\nUzmanlara göre mümkün, ancak zor. Asıl çözüm; eğitim, etik bilinci ve güçlü bir denetim sisteminde yatıyor. Türkiye Futbol Federasyonu'nun 2025 planlamasında 'Etik Futbol Akademisi' kurma hedefi de bu kapsamda değerlendiriliyor.\n\n### Sonuç\nTürk futbolu bugün sadece skor mücadelesi vermiyor; aynı zamanda güven mücadelesi de veriyor. Bahis skandalları, kısa vadede can yakıcı olsa da, uzun vadede temiz ve şeffaf bir futbol kültürünün temellerini atabilir."
-}
-
+    "title": "Apple’dan dev yatırım: Türkiye’de yeni AR-GE merkezi kurulacak",
+    "slug": "apple-turkiye-arge-merkezi",
+    "date": "2025-11-07T11:00:00+03:00",
+    "excerpt": "Apple, Türkiye’deki yatırımlarını genişletme kararı aldı. Yeni AR-GE merkezi 2026 başında faaliyete geçecek.",
+    "image": "https://haberist.net/uploads/apple-arge-turkiye.jpg",
+    "content": "<p>Apple, İstanbul’da yeni bir AR-GE merkezi kuracağını açıkladı. Şirket, bu yatırımla birlikte bölgedeki mühendislik kapasitesini artırmayı hedefliyor.</p><p>Merkezin açılışıyla birlikte yüzlerce yeni istihdamın da sağlanması bekleniyor.</p>"
+  }
 ]
