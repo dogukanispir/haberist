@@ -24,7 +24,7 @@ export default function Nav() {
   const [lastUpdate, setLastUpdate] = useState(null);
   const [isUpdated, setIsUpdated] = useState(false);
 
-  // 💰 Canlı finans verilerini al
+  // 💰 Finans verilerini al
   const fetchFinance = async () => {
     try {
       const res = await fetch("https://api.genelpara.com/embed/altin.json");
@@ -37,7 +37,7 @@ export default function Nav() {
       });
       setLastUpdate(new Date());
       setIsUpdated(true);
-      setTimeout(() => setIsUpdated(false), 2000); // 2 sn boyunca efekt göster
+      setTimeout(() => setIsUpdated(false), 2000);
     } catch (err) {
       console.error("Finans verileri alınamadı:", err);
     }
@@ -45,15 +45,15 @@ export default function Nav() {
 
   useEffect(() => {
     fetchFinance();
-    const interval = setInterval(fetchFinance, 300000); // 5 dakikada bir
+    const interval = setInterval(fetchFinance, 300000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <>
       {/* 💰 Finans Bar */}
-      <div className="bg-[var(--haberist-red)] text-white text-sm py-1 overflow-x-auto whitespace-nowrap scrollbar-hide border-b border-red-700">
-        <div className="container flex justify-center sm:justify-between items-center flex-wrap px-3 font-medium gap-3">
+      <div className="bg-[var(--haberist-red)] text-white text-sm py-1 border-b border-red-700">
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-4 px-3 font-medium text-center sm:text-left">
           <div className="flex flex-wrap justify-center gap-4">
             <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
               <FaDollarSign /> Dolar:{" "}
@@ -73,37 +73,34 @@ export default function Nav() {
             </span>
           </div>
 
-          {/* ⏰ Son Güncelleme */}
           {lastUpdate && (
-            <span className="text-xs text-zinc-200 italic">
+            <span className="text-xs text-zinc-200 italic block sm:inline">
               🕒 {lastUpdate.toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" })} itibarıyla
             </span>
           )}
         </div>
       </div>
 
-      {/* 🔝 ÜST KISIM (LOGO + MİSYON) */}
+      {/* 🔝 Üst Kısım (Logo + Yazı) */}
       <header className="sticky top-0 z-50 bg-white border-b border-zinc-200 shadow-sm">
-        <div className="container flex flex-col items-center sm:flex-row sm:justify-between py-4 text-center sm:text-left">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
-            <div className="flex items-center justify-center sm:justify-start gap-3">
-              <div className="w-9 h-9 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
-                H
-              </div>
-              <h1 className="text-2xl font-extrabold text-[var(--haberist-red)] leading-none">
-                Haberist
-              </h1>
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between py-4 px-3 text-center sm:text-left">
+          <div className="flex items-center gap-3 mb-2 sm:mb-0">
+            <div className="w-9 h-9 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
+              H
             </div>
-            <p className="mt-2 sm:mt-0 text-sm text-zinc-600 font-medium leading-tight sm:border-l sm:border-zinc-300 sm:pl-3">
-              Türkiye’nin tüm haberleri, tek platformda.{" "}
-              <span className="hidden sm:inline text-zinc-400">•</span>{" "}
-              Gündemi senin için takip ediyoruz.
-            </p>
+            <h1 className="text-2xl font-extrabold text-[var(--haberist-red)] leading-none">
+              Haberist
+            </h1>
           </div>
+          <p className="text-sm text-zinc-600 font-medium leading-tight max-w-md">
+            Türkiye’nin tüm haberleri, tek platformda.{" "}
+            <span className="hidden sm:inline text-zinc-400">•</span>{" "}
+            Gündemi senin için takip ediyoruz.
+          </p>
         </div>
 
-        {/* 🔹 KATEGORİ MENÜSÜ */}
-        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-start">
+        {/* 🔹 Kategori Menü */}
+        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-start max-w-6xl mx-auto">
           {categories.map((cat) => {
             const active = router.asPath === cat.path;
             return (
@@ -123,7 +120,7 @@ export default function Nav() {
         </nav>
       </header>
 
-      {/* 🔴 SON DAKİKA */}
+      {/* 🔴 Son Dakika */}
       <BreakingNews />
     </>
   );
