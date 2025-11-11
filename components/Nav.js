@@ -13,6 +13,7 @@ export default function Nav() {
     { name: "Spor", path: "/c/spor" },
     { name: "Teknoloji", path: "/c/teknoloji" },
     { name: "Magazin", path: "/c/magazin" },
+    { name: "📰 Blog", path: "/blog" }, // ✅ Blog sekmesi eklendi
   ];
 
   const [finance, setFinance] = useState({
@@ -55,20 +56,16 @@ export default function Nav() {
         <div className="container flex justify-center sm:justify-between items-center flex-wrap px-3 font-medium gap-3">
           <div className="flex flex-wrap justify-center gap-4">
             <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
-              <FaDollarSign /> Dolar:{" "}
-              <b>{finance.dolar ? `${finance.dolar} ₺` : "Yükleniyor..."}</b>
+              <FaDollarSign /> Dolar: <b>{finance.dolar ? `${finance.dolar} ₺` : "Yükleniyor..."}</b>
             </span>
             <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
-              <FaEuroSign /> Euro:{" "}
-              <b>{finance.euro ? `${finance.euro} ₺` : "Yükleniyor..."}</b>
+              <FaEuroSign /> Euro: <b>{finance.euro ? `${finance.euro} ₺` : "Yükleniyor..."}</b>
             </span>
             <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
-              <GiGoldBar /> Gram Altın:{" "}
-              <b>{finance.altin ? `${finance.altin} ₺` : "Yükleniyor..."}</b>
+              <GiGoldBar /> Gram Altın: <b>{finance.altin ? `${finance.altin} ₺` : "Yükleniyor..."}</b>
             </span>
             <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
-              <GiTwoCoins /> Çeyrek:{" "}
-              <b>{finance.ceyrek ? `${finance.ceyrek} ₺` : "Yükleniyor..."}</b>
+              <GiTwoCoins /> Çeyrek: <b>{finance.ceyrek ? `${finance.ceyrek} ₺` : "Yükleniyor..."}</b>
             </span>
           </div>
           {lastUpdate && (
@@ -81,29 +78,24 @@ export default function Nav() {
 
       {/* 🔝 ÜST KISIM (LOGO + MİSYON) */}
       <header className="sticky top-0 z-50 bg-white border-b border-zinc-200 shadow-sm">
-        <div className="container flex flex-col sm:flex-row items-center justify-center sm:justify-between py-4 px-4 text-center sm:text-left gap-3 sm:gap-6">
-          {/* Sol kısım: Logo + isim + slogan */}
-          <div className="flex flex-col sm:flex-row items-center text-center sm:text-left sm:gap-4">
-            <div className="flex items-center justify-center sm:justify-start gap-3">
-              <div className="w-9 h-9 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
+        <div className="container flex flex-col sm:flex-row items-center justify-between py-4 px-4 text-center sm:text-left gap-3 sm:gap-6">
+          {/* Logo + Site İsmi + Slogan */}
+          <div className="flex flex-col sm:flex-row items-center sm:gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
                 H
               </div>
-              <h1 className="text-2xl font-extrabold text-[var(--haberist-red)] leading-none">
-                Haberist
-              </h1>
+              <h1 className="text-2xl font-extrabold text-[var(--haberist-red)] leading-none">Haberist</h1>
             </div>
-
-            {/* Alt yazı */}
-            <p className="text-sm text-zinc-600 font-medium sm:mt-0 sm:border-l sm:border-zinc-300 sm:pl-4 max-w-[500px] sm:text-left text-center">
+            <p className="text-sm text-zinc-600 font-medium sm:mt-0 sm:border-l sm:border-zinc-300 sm:pl-4 max-w-[500px]">
               Türkiye’nin tüm haberleri, tek platformda.{" "}
-              <span className="hidden sm:inline text-zinc-400">•</span>{" "}
-              Gündemi senin için takip ediyoruz.
+              <span className="hidden sm:inline text-zinc-400">•</span> Gündemi senin için takip ediyoruz.
             </p>
           </div>
         </div>
 
         {/* 🔹 KATEGORİ MENÜSÜ */}
-        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-center">
+        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center flex-wrap">
           {categories.map((cat) => {
             const active = router.asPath === cat.path;
             return (
@@ -123,7 +115,7 @@ export default function Nav() {
         </nav>
       </header>
 
-      {/* 🔴 SON DAKİKA */}
+      {/* 🔴 SON DAKİKA ALANI */}
       <BreakingNews />
     </>
   );
