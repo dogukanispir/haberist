@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-zinc-50 text-zinc-900; }
+.container { @apply max-w-6xl mx-auto px-4; }
+a { @apply hover:opacity-80 transition; }
+.badge { @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs; }
+.card { @apply bg-white rounded-2xl shadow-sm border border-zinc-100 overflow-hidden; }
