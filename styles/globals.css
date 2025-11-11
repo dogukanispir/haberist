@@ -217,3 +217,35 @@ footer a:hover {
   white-space: nowrap;
 }
 
+/* Haberist Logosu için küçük parlayan efekt */
+.w-8.h-8.bg-\[var\(--haberist-red\)\] {
+  position: relative;
+  overflow: hidden;
+}
+
+.w-8.h-8.bg-\[var\(--haberist-red\)\]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
