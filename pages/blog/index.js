@@ -9,7 +9,7 @@ export default function BlogPage() {
         <title>Blog | Haberist</title>
         <meta
           name="description"
-          content="Haberist Blog – Güncel teknoloji, ekonomi, medya ve yaşam üzerine analizler."
+          content="Haberist Blog – Güncel teknoloji, ekonomi, spor ve yaşam yazıları. Türkiye'nin gündemini analiz ediyoruz."
         />
       </Head>
 
@@ -19,15 +19,40 @@ export default function BlogPage() {
         </h1>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <div className="block border border-zinc-200 rounded-xl shadow-sm hover:shadow-md transition p-5 bg-white">
-                <h2 className="text-lg font-bold mb-2">{post.title}</h2>
-                <p className="text-sm text-zinc-500 mb-2">{post.date}</p>
-                <p className="text-zinc-700">{post.excerpt}</p>
-              </div>
-            </Link>
-          ))}
+          {posts.map((post) => {
+            // 🧠 Otomatik görsel oluşturma
+            const fallbackImage = `https://source.unsplash.com/600x400/?${encodeURIComponent(
+              post.title.replace(/\s+/g, ",")
+            )}`;
+            const imageUrl =
+              post.image && post.image.trim() !== ""
+                ? post.image
+                : fallbackImage;
+
+            return (
+              <Link key={post.slug} href={`/blog/${post.slug}`}>
+                <div className="block border border-zinc-200 rounded-xl shadow-sm hover:shadow-md transition bg-white overflow-hidden">
+                  {/* Görsel */}
+                  <img
+                    src={imageUrl}
+                    alt={post.title}
+                    className="w-full h-48 object-cover"
+                  />
+
+                  {/* Metin Alanı */}
+                  <div className="p-5">
+                    <h2 className="text-lg font-bold mb-2 line-clamp-2">
+                      {post.title}
+                    </h2>
+                    <p className="text-xs text-zinc-500 mb-2">{post.date}</p>
+                    <p className="text-zinc-700 text-sm line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </>
