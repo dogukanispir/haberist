@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import posts from "../../data/blogPosts.json";
+import posts from "../../../data/blogPosts.json";
+
 
 export default function BlogPost() {
   const router = useRouter();
