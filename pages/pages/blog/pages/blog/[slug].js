@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import posts from "../../../data/blogPosts.json";
-
+import posts from "../../../data/blogPosts.json"; // doğru yol
 
 export default function BlogPost() {
   const router = useRouter();
@@ -24,7 +23,10 @@ export default function BlogPost() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={`${post.title} | Haberist`} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:url" content={`https://haberist.net/blog/${post.slug}`} />
+        <meta
+          property="og:url"
+          content={`https://haberist.net/blog/${post.slug}`}
+        />
         <meta property="og:site_name" content="Haberist" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content={post.title} />
@@ -50,4 +52,21 @@ export default function BlogPost() {
                   "@type": "ImageObject",
                   url: "https://haberist.net/logo.png",
                 },
-              }
+              },
+            }),
+          }}
+        />
+      </Head>
+
+      <div className="container mx-auto px-4 py-10 max-w-3xl">
+        <h1 className="text-3xl font-bold text-[var(--haberist-red)] mb-4">
+          {post.title}
+        </h1>
+        <p className="text-sm text-zinc-500 mb-6">{post.date}</p>
+        <div className="text-zinc-700 leading-relaxed whitespace-pre-line">
+          {post.content}
+        </div>
+      </div>
+    </>
+  );
+}
