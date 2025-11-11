@@ -3,7 +3,7 @@ import Nav from '../components/Nav'
 import Grid from '../components/Grid'
 import { fetchCategory } from '../lib/aggregate'
 import { seoFor } from '../lib/seo'
-import BlogTeasers from '../components/BlogTeasers' // ✅ relative path, @ işareti yok
+import BlogTeasers from '../components/BlogTeasers' // ✅ doğru path
 
 export default function Home({ items }) {
   const meta = seoFor({
@@ -34,15 +34,21 @@ export default function Home({ items }) {
 
       {/* 📰 Ana İçerik */}
       <main className="container py-6">
+        {/* Gündem Başlık */}
         <h1 className="text-2xl font-bold mb-4">
           Gündem – Bugün En Çok Konuşulanlar
         </h1>
 
-        {/* 🔸 Gündem haber listesi */}
+        {/* 🔸 Gündem Haber Listesi */}
         <Grid items={items} />
 
         {/* 🔹 Son Bloglar bölümü */}
-        <BlogTeasers limit={6} />
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold mb-6 text-[var(--haberist-red)] text-center">
+            📰 Son Bloglar
+          </h2>
+          <BlogTeasers limit={6} />
+        </section>
       </main>
 
       {/* 🔻 Footer */}
