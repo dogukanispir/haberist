@@ -2,18 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-body { @apply bg-zinc-50 text-zinc-900; }
-.container { @apply max-w-6xl mx-auto px-4; }
-a { @apply hover:opacity-80 transition; }
-.badge { @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs; }
-.card { @apply bg-white rounded-2xl shadow-sm border border-zinc-100 overflow-hidden; }
-/* === Mobil Uyum Ayarları === */
+/* === GENEL GÖRÜNÜM === */
 body {
+  @apply bg-zinc-50 text-zinc-900;
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
 }
 
+.container {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+a {
+  @apply hover:opacity-80 transition;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-zinc-100 overflow-hidden;
+}
+
+/* === MOBİL UYUM AYARLARI === */
 img {
   max-width: 100%;
   height: auto;
@@ -63,7 +76,8 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
   }
 }
-/* 🔴 HABERİST KIRMIZI TEMASI */
+
+/* === 🔴 HABERİST KIRMIZI TEMASI === */
 
 /* Renk Değişkenleri */
 :root {
@@ -95,6 +109,7 @@ header {
   border-radius: 9999px;
   transition: all 0.2s ease;
 }
+
 .category-btn:hover,
 .category-btn.active {
   background: var(--haberist-red);
@@ -105,6 +120,7 @@ header {
 h1, h2, h3 {
   color: var(--haberist-dark);
 }
+
 h2, h3 {
   border-left: 4px solid var(--haberist-red);
   padding-left: 0.4rem;
@@ -115,6 +131,7 @@ a {
   color: var(--haberist-dark);
   transition: color 0.2s ease;
 }
+
 a:hover {
   color: var(--haberist-red);
 }
@@ -128,5 +145,41 @@ a.btn {
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  tran
+  transition: background 0.2s ease;
+}
 
+button:hover,
+.btn:hover,
+a.btn:hover {
+  background: #a30000;
+}
+
+/* Kartların Hover Gölgesi */
+.card-hover:hover {
+  box-shadow: 0 6px 16px rgba(197, 0, 0, 0.25);
+  transform: translateY(-3px);
+  transition: all 0.25s ease;
+}
+
+/* Sticky Aside (sağ sütun) */
+aside {
+  border-left: 3px solid var(--haberist-red);
+  background: white;
+}
+
+/* Alt Bilgi (Footer) */
+footer {
+  background: var(--haberist-dark);
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--haberist-red);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
