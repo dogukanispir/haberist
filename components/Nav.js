@@ -14,35 +14,29 @@ export default function Nav() {
 
   return (
     <>
-      {/* 🔝 Üst Menü */}
       <header className="sticky top-0 z-50 bg-white border-b border-zinc-200 shadow-sm">
-        <div className="container flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 gap-2">
-          {/* 🔴 Logo + Motto */}
-          <div className="flex items-center gap-3">
-            {/* Küçük dairesel logo */}
-            <div className="w-8 h-8 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
-              H
-            </div>
-
-            <div>
-              <h1 className="text-xl font-extrabold text-[var(--haberist-red)] tracking-tight leading-none">
+        {/* 🔴 ÜST KISIM (LOGO + MİSYON) */}
+        <div className="container flex flex-col items-center sm:flex-row sm:justify-between py-4 text-center sm:text-left">
+          {/* Logo + Yazı */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+            <div className="flex items-center justify-center sm:justify-start gap-3">
+              <div className="w-9 h-9 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                H
+              </div>
+              <h1 className="text-2xl font-extrabold text-[var(--haberist-red)] leading-none">
                 Haberist
               </h1>
-              <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-tight">
-                <span className="block sm:inline">
-                  Türkiye’nin tüm haberleri, tek platformda.
-                </span>{" "}
-                <span className="hidden sm:inline text-zinc-400">•</span>{" "}
-                <span className="block sm:inline">
-                  Gündemi senin için takip ediyoruz.
-                </span>
-              </p>
             </div>
+            <p className="mt-2 sm:mt-0 text-sm text-zinc-600 font-medium leading-tight sm:border-l sm:border-zinc-300 sm:pl-3">
+              Türkiye’nin tüm haberleri, tek platformda.{" "}
+              <span className="hidden sm:inline text-zinc-400">•</span>{" "}
+              Gündemi senin için takip ediyoruz.
+            </p>
           </div>
         </div>
 
-        {/* 🔹 Kategori Butonları */}
-        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100">
+        {/* 🔹 KATEGORİ MENÜSÜ */}
+        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-start">
           {categories.map((cat) => {
             const active = router.asPath === cat.path
             return (
@@ -62,7 +56,7 @@ export default function Nav() {
         </nav>
       </header>
 
-      {/* 🔴 SON DAKİKA KAYAN YAZI */}
+      {/* 🔴 SON DAKİKA */}
       <BreakingNews />
     </>
   )
