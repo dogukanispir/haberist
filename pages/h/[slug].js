@@ -35,6 +35,7 @@ export default function Detail({ item }) {
     },
     mainEntityOfPage: meta.url,
     description: summary,
+    articleBody: summary, // ✅ SEO için eklendi
   }
 
   return (
@@ -43,11 +44,27 @@ export default function Detail({ item }) {
         <title>{meta.title}</title>
         <meta name="description" content={summary} />
         <link rel="canonical" href={meta.url} />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content={item.source || 'Haberist'} />
+
+        {/* Open Graph (Facebook / WhatsApp) */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={summary} />
         <meta property="og:image" content={meta.image} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <meta property="og:url" content={meta.url} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={summary} />
+        <meta name="twitter:image" content={meta.image} />
+
+        {/* JSON-LD Yapılandırılmış Veri */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </Head>
 
       <main className="container py-8">
@@ -59,7 +76,14 @@ export default function Detail({ item }) {
 
           {item.image && (
             <div className="relative aspect-[16/9] mb-4 rounded-xl overflow-hidden bg-zinc-100">
-              <Image src={item.image} alt={item.title} fill className="object-cover" sizes="100vw" priority />
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority
+              />
             </div>
           )}
 
