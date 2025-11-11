@@ -21,8 +21,10 @@ export default function Nav() {
     altin: null,
     ceyrek: null,
   });
+  const [lastUpdate, setLastUpdate] = useState(null);
+  const [isUpdated, setIsUpdated] = useState(false);
 
-  // 💰 Canlı kurları çek
+  // 💰 Canlı finans verilerini al
   const fetchFinance = async () => {
     try {
       const res = await fetch("https://api.genelpara.com/embed/altin.json");
@@ -33,38 +35,50 @@ export default function Nav() {
         altin: data.GA.satis,
         ceyrek: data.C.satis,
       });
+      setLastUpdate(new Date());
+      setIsUpdated(true);
+      setTimeout(() => setIsUpdated(false), 2000); // 2 sn boyunca efekt göster
     } catch (err) {
       console.error("Finans verileri alınamadı:", err);
     }
   };
 
   useEffect(() => {
-    fetchFinance(); // Sayfa açıldığında çağır
-    const interval = setInterval(fetchFinance, 300000); // 5 dakikada bir güncelle
+    fetchFinance();
+    const interval = setInterval(fetchFinance, 300000); // 5 dakikada bir
     return () => clearInterval(interval);
   }, []);
 
   return (
     <>
       {/* 💰 Finans Bar */}
-      <div className="bg-[var(--haberist-red)] text-white text-sm py-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
-        <div className="container flex justify-center gap-6 sm:justify-start px-3 font-medium">
-          <span className="flex items-center gap-1">
-            <FaDollarSign /> Dolar:{" "}
-            <b>{finance.dolar ? `${finance.dolar} ₺` : "Yükleniyor..."}</b>
-          </span>
-          <span className="flex items-center gap-1">
-            <FaEuroSign /> Euro:{" "}
-            <b>{finance.euro ? `${finance.euro} ₺` : "Yükleniyor..."}</b>
-          </span>
-          <span className="flex items-center gap-1">
-            <GiGoldBar /> Gram Altın:{" "}
-            <b>{finance.altin ? `${finance.altin} ₺` : "Yükleniyor..."}</b>
-          </span>
-          <span className="flex items-center gap-1">
-            <GiTwoCoins /> Çeyrek:{" "}
-            <b>{finance.ceyrek ? `${finance.ceyrek} ₺` : "Yükleniyor..."}</b>
-          </span>
+      <div className="bg-[var(--haberist-red)] text-white text-sm py-1 overflow-x-auto whitespace-nowrap scrollbar-hide border-b border-red-700">
+        <div className="container flex justify-center sm:justify-between items-center flex-wrap px-3 font-medium gap-3">
+          <div className="flex flex-wrap justify-center gap-4">
+            <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
+              <FaDollarSign /> Dolar:{" "}
+              <b>{finance.dolar ? `${finance.dolar} ₺` : "Yükleniyor..."}</b>
+            </span>
+            <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
+              <FaEuroSign /> Euro:{" "}
+              <b>{finance.euro ? `${finance.euro} ₺` : "Yükleniyor..."}</b>
+            </span>
+            <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
+              <GiGoldBar /> Gram Altın:{" "}
+              <b>{finance.altin ? `${finance.altin} ₺` : "Yükleniyor..."}</b>
+            </span>
+            <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
+              <GiTwoCoins /> Çeyrek:{" "}
+              <b>{finance.ceyrek ? `${finance.ceyrek} ₺` : "Yükleniyor..."}</b>
+            </span>
+          </div>
+
+          {/* ⏰ Son Güncelleme */}
+          {lastUpdate && (
+            <span className="text-xs text-zinc-200 italic">
+              🕒 {lastUpdate.toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" })} itibarıyla
+            </span>
+          )}
         </div>
       </div>
 
