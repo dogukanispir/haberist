@@ -25,21 +25,29 @@ export default function BlogTeasers({ limit = 6 }) {
       {/* --- Blog grid --- */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {latest.map((post) => {
-          const fallbackImage = `https://source.unsplash.com/600x400/?${encodeURIComponent(
-            post.title.replace(/\s+/g, ",")
+          // 🔸 Başlığa göre otomatik görsel oluştur
+          const fallbackImage = `https://source.unsplash.com/800x600/?${encodeURIComponent(
+            post.title
+              .replace(/\s+/g, ",")
+              .replace(/[^\w,]/g, "")
+              .toLowerCase()
           )}`;
+
           const imageUrl =
             post.image && post.image.trim() !== "" ? post.image : fallbackImage;
 
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <article className="group bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+              <article className="group bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                {/* 🔹 Otomatik veya özel görsel */}
                 <img
                   src={imageUrl}
                   alt={post.title}
                   className="w-full h-44 object-cover group-hover:opacity-90 transition"
                   loading="lazy"
                 />
+
+                {/* 🔹 İçerik */}
                 <div className="p-4">
                   <h3 className="font-bold text-base sm:text-lg mb-1 line-clamp-2 group-hover:text-[var(--haberist-red)] transition">
                     {post.title}
