@@ -24,7 +24,6 @@ export default function Nav() {
   const [lastUpdate, setLastUpdate] = useState(null);
   const [isUpdated, setIsUpdated] = useState(false);
 
-  // 💰 Finans verilerini al
   const fetchFinance = async () => {
     try {
       const res = await fetch("https://api.genelpara.com/embed/altin.json");
@@ -52,8 +51,8 @@ export default function Nav() {
   return (
     <>
       {/* 💰 Finans Bar */}
-      <div className="bg-[var(--haberist-red)] text-white text-sm py-1 border-b border-red-700">
-        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-4 px-3 font-medium text-center sm:text-left">
+      <div className="bg-[var(--haberist-red)] text-white text-sm py-1 overflow-x-auto whitespace-nowrap scrollbar-hide border-b border-red-700">
+        <div className="container flex justify-center sm:justify-between items-center flex-wrap px-3 font-medium gap-3">
           <div className="flex flex-wrap justify-center gap-4">
             <span className={`flex items-center gap-1 transition-all ${isUpdated ? "text-yellow-300" : ""}`}>
               <FaDollarSign /> Dolar:{" "}
@@ -72,35 +71,39 @@ export default function Nav() {
               <b>{finance.ceyrek ? `${finance.ceyrek} ₺` : "Yükleniyor..."}</b>
             </span>
           </div>
-
           {lastUpdate && (
-            <span className="text-xs text-zinc-200 italic block sm:inline">
+            <span className="text-xs text-zinc-200 italic">
               🕒 {lastUpdate.toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" })} itibarıyla
             </span>
           )}
         </div>
       </div>
 
-      {/* 🔝 Üst Kısım (Logo + Yazı) */}
+      {/* 🔝 ÜST KISIM (LOGO + MİSYON) */}
       <header className="sticky top-0 z-50 bg-white border-b border-zinc-200 shadow-sm">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between py-4 px-3 text-center sm:text-left">
-          <div className="flex items-center gap-3 mb-2 sm:mb-0">
-            <div className="w-9 h-9 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
-              H
+        <div className="container flex flex-col sm:flex-row items-center justify-center sm:justify-between py-4 px-4 text-center sm:text-left gap-3 sm:gap-6">
+          {/* Sol kısım: Logo + isim + slogan */}
+          <div className="flex flex-col sm:flex-row items-center text-center sm:text-left sm:gap-4">
+            <div className="flex items-center justify-center sm:justify-start gap-3">
+              <div className="w-9 h-9 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                H
+              </div>
+              <h1 className="text-2xl font-extrabold text-[var(--haberist-red)] leading-none">
+                Haberist
+              </h1>
             </div>
-            <h1 className="text-2xl font-extrabold text-[var(--haberist-red)] leading-none">
-              Haberist
-            </h1>
+
+            {/* Alt yazı */}
+            <p className="text-sm text-zinc-600 font-medium sm:mt-0 sm:border-l sm:border-zinc-300 sm:pl-4 max-w-[500px] sm:text-left text-center">
+              Türkiye’nin tüm haberleri, tek platformda.{" "}
+              <span className="hidden sm:inline text-zinc-400">•</span>{" "}
+              Gündemi senin için takip ediyoruz.
+            </p>
           </div>
-          <p className="text-sm text-zinc-600 font-medium leading-tight max-w-md">
-            Türkiye’nin tüm haberleri, tek platformda.{" "}
-            <span className="hidden sm:inline text-zinc-400">•</span>{" "}
-            Gündemi senin için takip ediyoruz.
-          </p>
         </div>
 
-        {/* 🔹 Kategori Menü */}
-        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-start max-w-6xl mx-auto">
+        {/* 🔹 KATEGORİ MENÜSÜ */}
+        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-start">
           {categories.map((cat) => {
             const active = router.asPath === cat.path;
             return (
@@ -120,7 +123,7 @@ export default function Nav() {
         </nav>
       </header>
 
-      {/* 🔴 Son Dakika */}
+      {/* 🔴 SON DAKİKA */}
       <BreakingNews />
     </>
   );
