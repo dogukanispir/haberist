@@ -1,3 +1,16 @@
 User-agent: *
 Allow: /
+
+# Google News ve Discover erişimi
+User-agent: Googlebot-News
+Allow: /
+
+# Görsellerin dizine eklenmesi (Google Images için)
+User-agent: Googlebot-Image
+Allow: /
+
+# Site haritası (otomatik sitemap linki)
 Sitemap: https://haberist.net/sitemap.xml
+
+# Gecikmeleri azaltmak için crawl-delay (isteğe bağlı)
+# Crawl-delay: 10
