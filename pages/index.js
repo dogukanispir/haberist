@@ -10,7 +10,7 @@ export default function Home({ items }) {
     title: 'Haberist – Türkiye’nin tüm haberleri, tek platformda',
     path: '/',
   })
-
+  
   return (
     <div>
       {/* 🔹 SEO META */}
