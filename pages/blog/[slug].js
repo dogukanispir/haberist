@@ -1,27 +1,23 @@
-import { useRouter } from "next/router";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import posts from "../../data/blogPosts.json";
 
-export default function BlogPost() {
-  const router = useRouter();
-  const { slug } = router.query;
+export async function getServerSideProps(context) {
+  const { slug } = context.params;
   const post = posts.find((p) => p.slug === slug);
 
-  if (!post)
-    return (
-      <div className="container mx-auto px-4 py-10 text-center">
-        <p className="text-zinc-500">Yazı bulunamadı.</p>
-      </div>
-    );
+  if (!post) {
+    return { notFound: true };
+  }
 
-  // 🧠 Otomatik görsel çekme (eğer image tanımlı değilse)
+  // 🧠 Otomatik görsel (fallback)
   const fallbackImage = `https://source.unsplash.com/1200x630/?${encodeURIComponent(
     post.title.replace(/\s+/g, ",")
   )}`;
   const imageUrl =
     post.image && post.image.trim() !== "" ? post.image : fallbackImage;
 
-  // 📰 Google News + Discover JSON-LD
+  // ✅ JSON-LD’yi burada oluşturuyoruz (server-side)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -48,6 +44,14 @@ export default function BlogPost() {
     },
   };
 
+  return {
+    props: { post, jsonLd, imageUrl },
+  };
+}
+
+export default function BlogPost({ post, jsonLd, imageUrl }) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -55,38 +59,31 @@ export default function BlogPost() {
         <meta name="description" content={post.excerpt} />
         <meta name="author" content="Haberist Editör Ekibi" />
 
-        {/* Open Graph / Twitter */}
+        {/* ✅ Rich Snippet verileri */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={`https://haberist.net/blog/${slug}`} />
+        <meta property="og:url" content={`https://haberist.net/blog/${post.slug}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
         <meta name="twitter:image" content={imageUrl} />
 
-        {/* ✅ JSON-LD yapılandırılmış veri */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        {/* ✅ JSON-LD artık SSR tarafında inline gözükecek */}
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Head>
 
-      <main className="container mx-auto px-4 py-10">
+      <main className="container mx-auto px-4 py-10 max-w-3xl">
         <h1 className="text-3xl font-extrabold mb-4 text-[var(--haberist-red)]">
           {post.title}
         </h1>
         <p className="text-sm text-zinc-500 mb-6">{post.date}</p>
-
-        {/* 🖼️ Görsel */}
         <img
           src={imageUrl}
           alt={post.title}
           className="rounded-xl shadow-md mb-6 w-full max-h-[500px] object-cover"
         />
-
-        {/* 📄 İçerik */}
         <article
           className="prose max-w-none text-zinc-800 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: post.content }}
