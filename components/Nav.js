@@ -103,7 +103,7 @@ export default function Nav() {
         </div>
 
         {/* 🔹 KATEGORİ MENÜSÜ */}
-        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-start">
+        <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-center">
           {categories.map((cat) => {
             const active = router.asPath === cat.path;
             return (
