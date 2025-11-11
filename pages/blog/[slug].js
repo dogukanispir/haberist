@@ -1,8 +1,6 @@
-import { useRouter } from "next/router";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import posts from "../../data/blogPosts.json";
-
-
 
 export default function BlogPost() {
   const router = useRouter();
@@ -16,56 +14,84 @@ export default function BlogPost() {
       </div>
     );
 
+  const imageUrl = post.image || "https://haberist.net/logo.png";
+  const pageUrl = `https://haberist.net/blog/${slug}`;
+
+  // --- Google Discover + News JSON-LD ---
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": [imageUrl],
+    "author": {
+      "@type": "Person",
+      "name": "Haberist Editör Ekibi",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Haberist",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://haberist.net/logo.png",
+      },
+    },
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": pageUrl,
+    },
+  };
+
   return (
     <>
       <Head>
-        <title>{post.title} | Haberist Blog</title>
+        {/* 🧠 Temel Meta Bilgileri */}
+        <title>{post.title} | Haberist</title>
         <meta name="description" content={post.excerpt} />
-        <meta name="author" content="Haberist" />
+        <meta name="author" content="Haberist Editör Ekibi" />
+
+        {/* 🟢 Open Graph (Facebook, WhatsApp, Discord) */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={`${post.title} | Haberist`} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:url" content={`https://haberist.net/blog/${post.slug}`} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="Haberist" />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content={post.title} />
-        <meta property="twitter:description" content={post.excerpt} />
 
-        {/* --- JSON-LD Schema --- */}
+        {/* 🐦 Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={imageUrl} />
+
+        {/* 📰 Google Discover & News Schema */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "NewsArticle",
-              headline: post.title,
-              description: post.excerpt,
-              author: {
-                "@type": "Organization",
-                name: "Haberist",
-              },
-              publisher: {
-                "@type": "Organization",
-                name: "Haberist",
-                logo: {
-                  "@type": "ImageObject",
-                  url: "https://haberist.net/logo.png",
-                },
-              },
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </Head>
 
-      <div className="container mx-auto px-4 py-10 max-w-3xl">
-        <h1 className="text-3xl font-bold text-[var(--haberist-red)] mb-4">
+      <main className="container mx-auto px-4 py-10 max-w-3xl">
+        <h1 className="text-3xl font-extrabold mb-4 text-[var(--haberist-red)]">
           {post.title}
         </h1>
         <p className="text-sm text-zinc-500 mb-6">{post.date}</p>
-        <div className="text-zinc-700 leading-relaxed whitespace-pre-line">
-          {post.content}
-        </div>
-      </div>
+
+        {imageUrl && (
+          <img
+            src={imageUrl}
+            alt={post.title}
+            className="rounded-xl shadow-md mb-6"
+          />
+        )}
+
+        <article
+          className="prose prose-zinc max-w-none text-zinc-800"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+      </main>
     </>
   );
 }
