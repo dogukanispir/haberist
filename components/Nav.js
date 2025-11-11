@@ -16,10 +16,18 @@ export default function Nav() {
     <>
       {/* 🔝 Üst Menü */}
       <header className="sticky top-0 z-50 bg-white border-b border-zinc-200 shadow-sm">
-        <div className="container flex items-center justify-between py-2">
-          <h1 className="text-lg font-bold text-[var(--haberist-red)]">
-            Haberist
-          </h1>
+        <div className="container flex flex-col sm:flex-row sm:items-center sm:justify-between py-3">
+          {/* 🔴 Logo + Mottolar */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+            <h1 className="text-xl font-bold text-[var(--haberist-red)] tracking-tight">
+              Haberist
+            </h1>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 text-xs sm:text-sm text-zinc-600">
+              <span>Türkiye’nin tüm haberleri, tek platformda.</span>
+              <span className="hidden sm:inline text-zinc-400">•</span>
+              <span>Gündemi senin için takip ediyoruz.</span>
+            </div>
+          </div>
         </div>
 
         {/* 🔹 Kategori Butonları */}
