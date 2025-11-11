@@ -1,50 +1,49 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Card({ item }) {
-  const href = `/h/${encodeURIComponent(item.slug)}?u=${encodeURIComponent(
-    item.link
-  )}&t=${encodeURIComponent(item.title)}&s=${encodeURIComponent(
-    item.source
-  )}&img=${encodeURIComponent(item.image || '')}`;
+  if (!item) return null
 
   return (
-    <article className="card flex flex-col bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-200 hover:scale-[1.02]">
+    <Link
+      href={`/h/${item.slug}`}
+      className="block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-[2px] transition-all duration-200"
+    >
       {/* Görsel Alanı */}
-      <div className="relative aspect-[16/9] bg-zinc-100">
-        {item.image ? (
+      <div className="relative w-full aspect-[16/9] bg-zinc-100">
+        {item.image && (
           <Image
             src={item.image}
             alt={item.title}
             fill
             className="object-cover"
-            sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+            sizes="100vw"
+            priority
           />
-        ) : (
-          <div className="absolute inset-0 grid place-content-center text-zinc-400 text-sm">
-            Görsel yok
-          </div>
         )}
-        {/* Kaynak etiketi */}
-        <span className="absolute left-2 top-2 bg-white/80 text-xs font-medium text-gray-700 px-2 py-1 rounded-md shadow-sm">
-          {item.source}
+
+        {/* Kaynak Etiketi */}
+        <span className="absolute top-2 left-2 bg-black/70 text-white text-[10px] px-2 py-[3px] rounded">
+          {item.source || "HABERİST"}
         </span>
       </div>
 
-      {/* Başlık ve tarih */}
-      <div className="p-3 flex-1 flex flex-col">
-        <Link
-          href={href}
-          className="font-semibold leading-snug text-gray-800 hover:text-blue-600 line-clamp-2"
-        >
+      {/* Başlık + Tarih */}
+      <div className="p-3 sm:p-4">
+        <h2 className="text-[15px] sm:text-base font-semibold leading-snug line-clamp-3">
           {item.title}
-        </Link>
+        </h2>
 
-        <div className="mt-auto pt-2 text-xs text-gray-500">
-          {new Date(item.isoDate).toLocaleString('tr-TR')}
-        </div>
+        <p className="text-xs text-zinc-500 mt-2">
+          {new Date(item.isoDate).toLocaleString("tr-TR", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </p>
       </div>
-    </article>
-  );
+    </Link>
+  )
 }
