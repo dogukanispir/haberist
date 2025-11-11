@@ -10,7 +10,8 @@ export default function Card({ item }) {
   )}&img=${encodeURIComponent(item.image || '')}`;
 
   return (
-    <article className="card flex flex-col">
+    <article className="card flex flex-col bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-200 hover:scale-[1.02]">
+      {/* Görsel Alanı */}
       <div className="relative aspect-[16/9] bg-zinc-100">
         {item.image ? (
           <Image
@@ -18,22 +19,29 @@ export default function Card({ item }) {
             alt={item.title}
             fill
             className="object-cover"
-            sizes="(max-width:768px) 100vw, 33vw"
+            sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
           />
         ) : (
-          <div className="absolute inset-0 grid place-content-center text-zinc-400">
+          <div className="absolute inset-0 grid place-content-center text-zinc-400 text-sm">
             Görsel yok
           </div>
         )}
-        <span className="badge absolute left-2 top-2 bg-white/90 border">
+        {/* Kaynak etiketi */}
+        <span className="absolute left-2 top-2 bg-white/80 text-xs font-medium text-gray-700 px-2 py-1 rounded-md shadow-sm">
           {item.source}
         </span>
       </div>
+
+      {/* Başlık ve tarih */}
       <div className="p-3 flex-1 flex flex-col">
-        <Link href={href} className="font-semibold leading-snug">
+        <Link
+          href={href}
+          className="font-semibold leading-snug text-gray-800 hover:text-blue-600 line-clamp-2"
+        >
           {item.title}
         </Link>
-        <div className="mt-auto pt-3 text-xs text-zinc-500">
+
+        <div className="mt-auto pt-2 text-xs text-gray-500">
           {new Date(item.isoDate).toLocaleString('tr-TR')}
         </div>
       </div>
