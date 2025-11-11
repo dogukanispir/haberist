@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 import BreakingNews from "./BreakingNews"
+import { useEffect, useState } from "react"
 
 export default function Nav() {
   const router = useRouter()
@@ -12,12 +13,36 @@ export default function Nav() {
     { name: "Magazin", path: "/c/magazin" },
   ]
 
+  const [finance, setFinance] = useState({
+    dolar: "33.15 ₺",
+    euro: "36.40 ₺",
+    altin: "2.458 ₺",
+    ceyrek: "4.025 ₺",
+  })
+
+  // ⚙️ Gelecekte API ile güncelleme (şimdilik simülasyon)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFinance((prev) => ({ ...prev })) // Burada API bağlanacak
+    }, 60000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
+      {/* 💰 Finans Bar */}
+      <div className="bg-[var(--haberist-red)] text-white text-sm py-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <div className="container flex justify-center gap-6 sm:justify-start px-3 font-medium">
+          <span>💵 Dolar: <b>{finance.dolar}</b></span>
+          <span>💶 Euro: <b>{finance.euro}</b></span>
+          <span>🥇 Gram Altın: <b>{finance.altin}</b></span>
+          <span>💍 Çeyrek: <b>{finance.ceyrek}</b></span>
+        </div>
+      </div>
+
+      {/* 🔝 ÜST KISIM (LOGO + MİSYON) */}
       <header className="sticky top-0 z-50 bg-white border-b border-zinc-200 shadow-sm">
-        {/* 🔴 ÜST KISIM (LOGO + MİSYON) */}
         <div className="container flex flex-col items-center sm:flex-row sm:justify-between py-4 text-center sm:text-left">
-          {/* Logo + Yazı */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
             <div className="flex items-center justify-center sm:justify-start gap-3">
               <div className="w-9 h-9 rounded-full bg-[var(--haberist-red)] text-white flex items-center justify-center font-bold text-lg shadow-md">
