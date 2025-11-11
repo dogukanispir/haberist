@@ -7,9 +7,9 @@ export default function Card({ item }) {
   return (
     <Link
       href={`/h/${item.slug}`}
-      className="block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-[2px] transition-all duration-200"
+      className="block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-[2px] transition-all duration-200 card-hover"
     >
-      {/* Görsel Alanı */}
+      {/* 🔹 Haber Görseli */}
       <div className="relative w-full aspect-[16/9] bg-zinc-100">
         {item.image && (
           <Image
@@ -22,13 +22,13 @@ export default function Card({ item }) {
           />
         )}
 
-        {/* Kaynak Etiketi */}
-        <span className="absolute top-2 left-2 bg-black/70 text-white text-[10px] px-2 py-[3px] rounded">
+        {/* 🔴 Kaynak Etiketi */}
+        <span className="absolute top-2 left-2 bg-[var(--haberist-red)] text-white text-[10px] px-2 py-[3px] rounded">
           {item.source || "HABERİST"}
         </span>
       </div>
 
-      {/* Başlık + Tarih */}
+      {/* 🔹 Başlık ve Tarih */}
       <div className="p-3 sm:p-4">
         <h2 className="text-[15px] sm:text-base font-semibold leading-snug line-clamp-3">
           {item.title}
