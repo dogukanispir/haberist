@@ -183,3 +183,21 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* === 🔧 Mobil navbar kaydırılabilir görünüm === */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+  nav {
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
