@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import posts from "../../../data/blogPosts.json"; // doğru yol
+import posts from "../../../data/blogPosts.json";
 
 export default function BlogPost() {
   const router = useRouter();
@@ -23,10 +23,7 @@ export default function BlogPost() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={`${post.title} | Haberist`} />
         <meta property="og:description" content={post.excerpt} />
-        <meta
-          property="og:url"
-          content={`https://haberist.net/blog/${post.slug}`}
-        />
+        <meta property="og:url" content={`https://haberist.net/blog/${post.slug}`} />
         <meta property="og:site_name" content="Haberist" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content={post.title} />
