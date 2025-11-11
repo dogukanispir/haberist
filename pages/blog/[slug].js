@@ -18,10 +18,10 @@ export default function BlogPost() {
   const fallbackImage = `https://source.unsplash.com/1200x630/?${encodeURIComponent(
     post.title.replace(/\s+/g, ",")
   )}`;
+  const imageUrl =
+    post.image && post.image.trim() !== "" ? post.image : fallbackImage;
 
-  const imageUrl = post.image && post.image.trim() !== "" ? post.image : fallbackImage;
-
-  // 📄 Google News + Discover JSON-LD
+  // 📰 Google News + Discover JSON-LD
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -53,11 +53,20 @@ export default function BlogPost() {
       <Head>
         <title>{post.title} | Haberist</title>
         <meta name="description" content={post.excerpt} />
+        <meta name="author" content="Haberist Editör Ekibi" />
+
+        {/* Open Graph / Twitter */}
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={`https://haberist.net/blog/${slug}`} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
         <meta name="twitter:image" content={imageUrl} />
+
+        {/* ✅ JSON-LD yapılandırılmış veri */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -77,6 +86,7 @@ export default function BlogPost() {
           className="rounded-xl shadow-md mb-6 w-full max-h-[500px] object-cover"
         />
 
+        {/* 📄 İçerik */}
         <article
           className="prose max-w-none text-zinc-800 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: post.content }}
