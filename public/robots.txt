@@ -1,16 +1,30 @@
+# ================================
+# robots.txt — Haberist SEO & Discover optimized
+# Site: https://haberist.net
+# ================================
+
 User-agent: *
 Allow: /
+Disallow: /_next/
+Disallow: /api/
+Disallow: /static/
+Disallow: /private/
+Disallow: /admin/
 
-# Google News ve Discover erişimi
+# Blog ve kategori sayfaları öncelikli taransın
+Allow: /blog/
+Allow: /c/
+
+# Google News & Discover botlarına tam erişim
 User-agent: Googlebot-News
 Allow: /
 
-# Görsellerin dizine eklenmesi (Google Images için)
+# Google Görseller (image search) için erişim
 User-agent: Googlebot-Image
 Allow: /
 
-# Site haritası (otomatik sitemap linki)
+# Site haritası (otomatik olarak blog ve kategori linklerini içerir)
 Sitemap: https://haberist.net/sitemap.xml
 
-# Gecikmeleri azaltmak için crawl-delay (isteğe bağlı)
+# (İsteğe bağlı) Crawl hızı sınırlaması
 # Crawl-delay: 10
