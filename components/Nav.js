@@ -1,42 +1,70 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
-import BreakingNews from "./BreakingNews"
-import { useEffect, useState } from "react"
+import Link from "next/link";
+import { useRouter } from "next/router";
+import BreakingNews from "./BreakingNews";
+import { useEffect, useState } from "react";
+import { FaDollarSign, FaEuroSign } from "react-icons/fa";
+import { GiGoldBar, GiTwoCoins } from "react-icons/gi";
 
 export default function Nav() {
-  const router = useRouter()
+  const router = useRouter();
   const categories = [
     { name: "Gündem", path: "/c/gundem" },
     { name: "Ekonomi", path: "/c/ekonomi" },
     { name: "Spor", path: "/c/spor" },
     { name: "Teknoloji", path: "/c/teknoloji" },
     { name: "Magazin", path: "/c/magazin" },
-  ]
+  ];
 
   const [finance, setFinance] = useState({
-    dolar: "33.15 ₺",
-    euro: "36.40 ₺",
-    altin: "2.458 ₺",
-    ceyrek: "4.025 ₺",
-  })
+    dolar: null,
+    euro: null,
+    altin: null,
+    ceyrek: null,
+  });
 
-  // ⚙️ Gelecekte API ile güncelleme (şimdilik simülasyon)
+  // 💰 Canlı kurları çek
+  const fetchFinance = async () => {
+    try {
+      const res = await fetch("https://api.genelpara.com/embed/altin.json");
+      const data = await res.json();
+      setFinance({
+        dolar: data.USD.satis,
+        euro: data.EUR.satis,
+        altin: data.GA.satis,
+        ceyrek: data.C.satis,
+      });
+    } catch (err) {
+      console.error("Finans verileri alınamadı:", err);
+    }
+  };
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setFinance((prev) => ({ ...prev })) // Burada API bağlanacak
-    }, 60000)
-    return () => clearInterval(interval)
-  }, [])
+    fetchFinance(); // Sayfa açıldığında çağır
+    const interval = setInterval(fetchFinance, 300000); // 5 dakikada bir güncelle
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
       {/* 💰 Finans Bar */}
       <div className="bg-[var(--haberist-red)] text-white text-sm py-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <div className="container flex justify-center gap-6 sm:justify-start px-3 font-medium">
-          <span>💵 Dolar: <b>{finance.dolar}</b></span>
-          <span>💶 Euro: <b>{finance.euro}</b></span>
-          <span>🥇 Gram Altın: <b>{finance.altin}</b></span>
-          <span>💍 Çeyrek: <b>{finance.ceyrek}</b></span>
+          <span className="flex items-center gap-1">
+            <FaDollarSign /> Dolar:{" "}
+            <b>{finance.dolar ? `${finance.dolar} ₺` : "Yükleniyor..."}</b>
+          </span>
+          <span className="flex items-center gap-1">
+            <FaEuroSign /> Euro:{" "}
+            <b>{finance.euro ? `${finance.euro} ₺` : "Yükleniyor..."}</b>
+          </span>
+          <span className="flex items-center gap-1">
+            <GiGoldBar /> Gram Altın:{" "}
+            <b>{finance.altin ? `${finance.altin} ₺` : "Yükleniyor..."}</b>
+          </span>
+          <span className="flex items-center gap-1">
+            <GiTwoCoins /> Çeyrek:{" "}
+            <b>{finance.ceyrek ? `${finance.ceyrek} ₺` : "Yükleniyor..."}</b>
+          </span>
         </div>
       </div>
 
@@ -63,7 +91,7 @@ export default function Nav() {
         {/* 🔹 KATEGORİ MENÜSÜ */}
         <nav className="overflow-x-auto scrollbar-hide flex gap-2 px-3 py-2 bg-white border-t border-zinc-100 justify-center sm:justify-start">
           {categories.map((cat) => {
-            const active = router.asPath === cat.path
+            const active = router.asPath === cat.path;
             return (
               <Link
                 key={cat.path}
@@ -76,7 +104,7 @@ export default function Nav() {
               >
                 {cat.name}
               </Link>
-            )
+            );
           })}
         </nav>
       </header>
@@ -84,5 +112,5 @@ export default function Nav() {
       {/* 🔴 SON DAKİKA */}
       <BreakingNews />
     </>
-  )
+  );
 }
